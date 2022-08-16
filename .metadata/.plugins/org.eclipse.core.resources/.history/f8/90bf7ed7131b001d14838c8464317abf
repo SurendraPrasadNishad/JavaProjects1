@@ -1,0 +1,10 @@
+package com.cascading;
+
+public class CascadeDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

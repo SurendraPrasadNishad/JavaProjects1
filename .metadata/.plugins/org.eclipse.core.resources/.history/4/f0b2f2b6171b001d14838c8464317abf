@@ -1,0 +1,46 @@
+package com.cascading;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.transaction.Transaction;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import com.mapping.Answers;
+import com.mapping.Question1ToMany;
+
+public class CascadeDemo {
+
+	public static void main(String[] args) {
+		
+		SessionFactory factory=new Configuration().configure().buildSessionFactory();
+		Session session=factory.openSession();
+		Transaction txt=session.beginTransaction();
+		
+		Question1ToMany q=new Question1ToMany();
+		q.setQue_Id(126);
+		q.setQuestion("What is C#?");
+		
+		Answers ans=new Answers(198,"C# is a OOP language.", q);
+		Answers ans1=new Answers(199,"C# is Object oriented programming Language.", q);
+		Answers ans2=new Answers(200,"C# is a Programming language.", q);
+		
+		
+		List <Answers> lst=new ArrayList<Answers>();
+		lst.add(ans);
+		lst.add(ans1);
+		lst.add(ans2);
+		q.setAnswers(lst);
+		session.save(q);
+		txt.commit();
+		
+		factory.close();
+		session.close();
+		
+		
+
+	}
+
+}

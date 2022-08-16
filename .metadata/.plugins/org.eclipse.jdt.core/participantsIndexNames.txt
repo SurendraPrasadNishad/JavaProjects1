@@ -1,0 +1,5 @@
+INDEX VERSION 1.131
+D:\Javacore\onlineVideos\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2389236961.index
+\NoteTaker\src\main\resources
+D:\Javacore\onlineVideos\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3913414311.index
+\NoteTaker\src\main\java
